@@ -44,13 +44,13 @@ Running it again is safe: every step that's already done is skipped. Nothing is 
 
   ```json
   {
-    "extraKnownMarketplaces": { "rodnavarro-skills": { "source": { "source": "github", "repo": "rodnavarro/skills", "ref": "v1.0.1" } } },
+    "extraKnownMarketplaces": { "rodnavarro-skills": { "source": { "source": "github", "repo": "rodnavarro/skills", "ref": "v1.0.3" } } },
     "enabledPlugins": { "status-bar@rodnavarro-skills": true },
     "statusLine": { "type": "command", "command": "node -e \"require(require('path').join(process.env.CLAUDE_CONFIG_DIR||require('os').homedir()+'/.claude','statusline.cjs'))\"" }
   }
   ```
 
-  The command works the same in bash, PowerShell and cmd. Needs Node.js on every machine.
+  The command works the same in bash, PowerShell and cmd. It needs Node.js: when a machine has none, the plugin installs Node.js LTS at the next start, once (Windows asks to allow it; a Mac asks for the password without Homebrew), and the bar shows after Claude Code is reopened.
 - `skills/claude-aliases/`: Claude Code aliases as a skill: a command like `claude-work` that starts Claude Code with its own login, settings, skills and history, kept apart from plain `claude`. It covers creating, signing in, listing, renaming, removing and fixing aliases. Ask Claude to "add a Claude alias" to run it.
 - `herdr/config.toml`: herdr's theme.
 - `roles/coordinator.md`, `roles/researcher.md`: each agent's role, copied to its folder as `CLAUDE.md`.

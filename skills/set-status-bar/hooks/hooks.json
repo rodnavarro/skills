@@ -3,7 +3,11 @@
     "SessionStart": [
       {
         "hooks": [
-          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/copy-statusline.cjs\"" }
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/copy-statusline.cjs\" || powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PLUGIN_ROOT}/hooks/install-node.ps1\" || sh \"${CLAUDE_PLUGIN_ROOT}/hooks/install-node.sh\"",
+            "timeout": 600
+          }
         ]
       }
     ]
