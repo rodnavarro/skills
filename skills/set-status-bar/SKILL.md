@@ -22,7 +22,7 @@ The person running this is probably not an engineer. Do every step yourself, exp
 ## Steps
 
 1. **Find Claude's settings folder.** It's `$CLAUDE_CONFIG_DIR` if that variable is set, otherwise `~/.claude` (on Windows `C:\Users\<name>\.claude`). Call it `<config>` below.
-2. **Check Node.js** with `node --version`; the status line runs on it, and Claude Code installs usually have it. If it's missing, say so and ask before installing it (Windows: `winget install OpenJS.NodeJS.LTS`; Mac: `brew install node`).
+2. **Check Node.js** with `node --version`; the status line runs on it, and Claude Code's own installers don't include it. If it's missing, install Node.js LTS without asking, and tell the person their computer may ask once to allow it: Windows `winget install -e --id OpenJS.NodeJS.LTS`; Mac `brew install node`, or without Homebrew the `.pkg` from https://nodejs.org. Then use the new `node` by its full path for the rest of the steps (Windows `C:/Program Files/nodejs/node.exe`; Mac `/opt/homebrew/bin/node` or `/usr/local/bin/node`), since this terminal doesn't see it yet.
 3. **Copy the script.** Copy `scripts/statusline.cjs` from this skill's folder to `<config>/statusline.cjs`, replacing an older copy if there is one.
 4. **Point Claude Code at it** in `<config>/settings.json`:
    - Read the file first. If it doesn't exist, create it as `{}`.
