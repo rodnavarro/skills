@@ -52,6 +52,7 @@ Running it again is safe: every step that's already done is skipped. Nothing is 
 
   The command works the same in bash, PowerShell and cmd. It needs Node.js: when a machine has none, the plugin installs Node.js LTS at the next start, once (Windows asks to allow it; a Mac asks for the password without Homebrew), and the bar shows after Claude Code is reopened.
 - `skills/claude-aliases/`: Claude Code aliases as a skill: a command like `claude-work` that starts Claude Code with its own login, settings, skills and history, kept apart from plain `claude`. It covers creating, signing in, listing, renaming, removing and fixing aliases. Ask Claude to "add a Claude alias" to run it.
+- `skills/simplify/`: writes or rewrites text in plain English, about 80% of the way to ASD-STE100 Simplified Technical English: short sentences, active voice, common words, steps in order. Ask Claude to "simplify this" to run it.
 - `herdr/config.toml`: herdr's theme.
 - `roles/coordinator.md`, `roles/researcher.md`: each agent's role, copied to its folder as `CLAUDE.md`.
 
