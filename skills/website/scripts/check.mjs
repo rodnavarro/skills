@@ -85,8 +85,10 @@ for (const p of pages) {
     // Scroll through once so lazy content loads, then back to the top.
     await page.evaluate(async () => {
       for (let y = 0; y < document.body.scrollHeight; y += 500) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 50)); }
-      window.scrollTo(0, 0);
+      // 'instant': a site with smooth scrolling would still be moving when the screenshot is taken.
+      window.scrollTo({ top: 0, behavior: 'instant' });
     });
+    await page.waitForTimeout(300);
     await page.screenshot({ path: path.join(outDir, `${slug(p)}-${size}.png`), fullPage: true });
 
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
