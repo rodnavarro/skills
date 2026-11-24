@@ -52,6 +52,7 @@ Running it again is safe: every step that's already done is skipped. Nothing is 
 
   The command works the same in bash, PowerShell and cmd. It needs Node.js: when a machine has none, the plugin installs Node.js LTS at the next start, once (Windows asks to allow it; a Mac asks for the password without Homebrew), and the bar shows after Claude Code is reopened.
 - `skills/claude-aliases/`: Claude Code aliases as a skill: a command like `claude-work` that starts Claude Code with its own login, settings, skills and history, kept apart from plain `claude`. It covers creating, signing in, listing, renaming, removing and fixing aliases. Ask Claude to "add a Claude alias" to run it.
+- `skills/website/`: build or remodel a website, premium, mobile first and proven: Lighthouse on phone and desktop, WCAG 2.1, W3C validation, HTTPS and screenshots at three screen sizes, plus search and AI-answer basics. To install it, copy the folder to `~/.claude/skills/website`, then ask Claude to "use the website skill to remodel my site". Credits and features: [skills/website/README.md](skills/website/README.md).
 - `herdr/config.toml`: herdr's theme.
 - `roles/coordinator.md`, `roles/researcher.md`: each agent's role, copied to its folder as `CLAUDE.md`.
 
